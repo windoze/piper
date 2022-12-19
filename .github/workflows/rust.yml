@@ -29,6 +29,7 @@ jobs:
         COSMOS_API_KEY: ${{ secrets.COSMOS_API_KEY }}
         COSMOS_DATABASE: ${{ secrets.COSMOS_DATABASE }}
         COSMOS_COLLECTION: ${{ secrets.COSMOS_COLLECTION }}
+        CONN_STR: ${{ secrets.CONN_STR }}
       run: cargo test --package=piper --verbose
     - name: Run cargo-tarpaulin
       env:
@@ -39,6 +40,7 @@ jobs:
         COSMOS_API_KEY: ${{ secrets.COSMOS_API_KEY }}
         COSMOS_DATABASE: ${{ secrets.COSMOS_DATABASE }}
         COSMOS_COLLECTION: ${{ secrets.COSMOS_COLLECTION }}
+        CONN_STR: ${{ secrets.CONN_STR }}
       uses: actions-rs/tarpaulin@v0.1
       with:
         version: '0.15.0'
